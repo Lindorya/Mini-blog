@@ -1,0 +1,48 @@
+#article {
+	width: 70%;
+	margin-top:1%;
+	border-radius:0.5em;
+}
+
+#titre {
+	width: 40%;
+	margin-top:3%;
+	border-radius:0.5em;
+}
+
+#categorie {
+	width: 20%;
+	margin-top:1%;
+	border-radius:0.5em;
+}
+
+.button-group ul {
+  width: 280px;
+  height: 150px;
+  overflow: auto;
+}
+
+#titreerr {
+	color:red;
+}
+
+#articleerr {
+	color:red;
+}
+
+#caterr {
+	color:red;
+}
+
+#redac {
+	font-family: helvetica;
+	color:#808080;
+	font-size:32px;
+	margin-top:10%;
+}
+
+body {
+	background-color:#f8f8f8;
+}
+
+/*yep*/
