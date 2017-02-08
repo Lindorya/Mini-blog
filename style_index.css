@@ -35,13 +35,19 @@
 
 #home {
 	width: 12%;
+  margin-top:0.8em;
+}
+
+#pen {
+  width: 60%;
+  margin-top:1.5em;
 }
 
 
-
 h1 {
-	text-transform: uppercase;
+	font-size:3.5em;
   color:white;
+  font-family:'Caveat Brush', cursive;
 }
 
 .fond {
@@ -110,8 +116,8 @@ h1 {
 .button {
   font-size: 1em;
   padding: 10px;
-  color: black;
-  border: 2px solid #0bb0d9;
+  color: white;
+  background: #0bb0d9;
   border-radius: 0.5em;
   text-decoration: none;
   cursor: pointer;
@@ -119,7 +125,7 @@ h1 {
 }
 
 .button:hover {
-  background: #0bb0d9;
+  background: #303030;
   color:white;
   text-decoration: none;
 }

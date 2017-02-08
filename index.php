@@ -11,9 +11,11 @@
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css"/>
           <link rel="stylesheet" type="text/css" href="style_index.css"/>
+          <link href="https://fonts.googleapis.com/css?family=Caveat+Brush" rel="stylesheet">
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
           <script src="bootstrap/bootstrap.min.js"></script>
           <script src="popup.js"></script>
+
 
   	</head>
   	
@@ -34,15 +36,15 @@
 
         </div>
 
-        <div class="col-xs-12 col-md-5">
+        <div class="col-xs-12 col-md-6">
 
-          <h1>&nbsp;&nbsp;&nbsp;&nbsp;Blog</h1>
+          <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blog</h1>
 
         </div>
 
-        <div class="col-xs-12 col-md-2">
+        <div class="col-xs-12 col-md-1">
 
-          <a href="Texteditor.php"><p id="edit">Écrire un article &rArr;</p></a>
+          <a href="Texteditor.php"><img src="images/pen.png" id="pen"></a>
 
         </div>
 
