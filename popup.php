@@ -11,9 +11,8 @@ foreach ($res as $row){
     echo "<div><br>";
     
     print "<h2 class='titre' onclick='popup()'>".$row["titre"]."</h2>";
-    print "<br>";
-    print "<p class='text'>".$row["texte"]."<p>";
     print "<p class='cat'>".$row["nom_categorie"]."</p>";
-    print "<h5 class='autor'>Article de ".$row["pseudo"]."</h5>";
+    print "<p class='text'>".$row["texte"]."<p>";   
+    print "<h5 class='autor'>".$row["pseudo"]."</h5>";
    }
 ?>

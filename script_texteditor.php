@@ -25,13 +25,13 @@ $error = false;
         $categorie = "";
     }
 
-     if ( (isset($_POST["pseudo"])) && (strlen(trim($_POST["pseudo"])) > 0) ) {
-        $categorie = stripslashes(strip_tags($_POST["pseudo"]));	
+      if ( (isset($_POST["pseudo"])) && (strlen(trim($_POST["pseudo"])) > 0) ) {
+        $pseudo = stripslashes(strip_tags($_POST["pseudo"]));	
     } 
 	else {
         echo "Merci d'écrire un pseudo <br />";
 		$error = true;
-        $categorie = "";
+        $pseudo = "";
     }
 
     if ( (isset($_POST["article"])) && (strlen(trim($_POST["article"])) > 0) ) {
@@ -49,10 +49,9 @@ $error = false;
 	$pw = '866Tnq7BVQ';
 	$pdo = new PDO('mysql:host=localhost;dbname=romaneh', $id, $pw, array(
     PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
-	$pseudo = $_SESSION["pseudo"];
-	$query = $pdo->query("INSERT INTO author (pseudo) VALUES ('$pseudo')");
 	$query = $pdo->query("INSERT INTO item (titre , nom_categorie, texte, pseudo) VALUES ('$titre', '$categorie', '$article', '$pseudo')");
 	$query = $pdo->query("INSERT INTO category (nom_categorie) VALUES ('$categorie')");
+	$query = $pdo->query("INSERT INTO author (pseudo) VALUES ('$pseudo')");
 	$pdo = null;
 	
 	}

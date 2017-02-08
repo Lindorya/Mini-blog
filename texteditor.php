@@ -27,11 +27,9 @@ session_start();
 
 				<body>
 
-					
-
 						<div class="container">
 
-							<div class="Editext">
+							<div class="editext">
 
 								<div class="row"> 
 
@@ -41,10 +39,12 @@ session_start();
 
 											<h1 id="redac">Rediger un article</h1>
 
+											<hr>
+
 											<div>
-												<input id="titre" name="titre" placeholder="Titre" value="<?php echo $_SESSION["titre"];?>"><br>
-												<span id="titreerr" class="error"><?php echo $_SESSION["errtitre"];?></span>
-											</div>
+												<input id="pseudo" name="pseudo" placeholder="Pseudo" value="<?php echo $_SESSION["pseudo"];?>"><br>
+												<span id="pseudoerr" class="error"><?php echo $_SESSION["errpseudo"];?></span>
+											<div>
 
 											<div>
 												<input id="categorie" name="categorie" placeholder="Catégorie" value="<?php echo $_SESSION["categorie"];?>"><br>
@@ -52,41 +52,30 @@ session_start();
 											<div>
 
 											<div>
-												<input id="pseudo" name="pseudo" placeholder="Pseudo" value="<?php echo $_SESSION["pseudo"];?>"><br>
-												<span id="pseudoerr" class="error"><?php echo $_SESSION["errpseudo"];?></span>
-											<div>
+												<input id="titre" name="titre" placeholder="Titre" value="<?php echo $_SESSION["titre"];?>"><br>
+												<span id="titreerr" class="error"><?php echo $_SESSION["errtitre"];?></span>
+											</div>
 
 												<textarea id="article" name="article" rows="15" cols="100" placeholder="Écrivez votre article ici" value="<?php echo $_SESSION["article"];?>"></textarea><br>
 												<span id="articleerr" class="error"><?php echo $_SESSION["errarticle"];?></span><br>
 											</div>
 
 
-											<input type="submit" value="Publier"/>
+											<input id="button" type="submit" value="Publier"/>
 
 
 										</div>
+							</div>												
+						</div>
+																									
+									</form>
 
-								</div>
-
-
-	
-
-														
-
-									</div>
-								</div>
-							
-									</div>
-																					
-
-					
-						</form>
 
 						<span id="message"></span>
 						<span id="msg_all"></span>
 
 
-						</div>
+
 
 					<script src ="fichier.js" type="text/javascript"></script>
 					<script src ="ajax.js" type="text/javascript"></script>
@@ -104,15 +93,16 @@ session_start();
 						            var monpseudo      = $("#pseudo").val();
 						            var meschamps = montitre + monarticle + macategorie + monpseudo;
 
-						            var titrealerte  = "Veuillez entrer votre titre";
-									var articlealerte  = "Veuillez entrer votre article";
-									var categoriealerte  = "Veuillez entrer une catégorie";
-									var pseudoalerte  = "Veuillez entrer un pseudo";
+						            var titrealerte  = "<span style='color:lightblue'>Veuillez entrer votre titre</span>";
+									var articlealerte  = "<span style='color:lightblue'>Veuillez entrer votre article</span>";
+									var categoriealerte  = "<span style='color:lightblue'>Veuillez entrer une catégorie</span>";
+									var pseudoalerte  = "<span style='color:lightblue'>Veuillez entrer un pseudo</span>";
 									var erreurenvoi = false;
 									
 									$("#titreerr").html("");
 									$("#articleerr").html("");
 									$("#caterr").html("");
+									$("#pseudoerr").html("");
 						            if (meschamps  == "") {
 						                $("#msg_all").html(message);
 										var erreurenvoi = true;
@@ -122,7 +112,7 @@ session_start();
 										var erreurenvoi = true;
 						            } 
 						            if (monpseudo == "") {
-						                $("#pseudoerr").html(titrealerte);
+						                $("#pseudoerr").html(pseudoalerte);
 										var erreurenvoi = true;
 						            } 
 									if (monarticle == "") {
@@ -140,7 +130,7 @@ session_start();
 						                    url: $(this).attr("action"),
 						                    data: $(this).serialize(),
 						                    success : function() {
-						                        $("#formulaire").html("<div class='col-xs-12 col-md-8 col-md-offset-3'><p>L'article a bien été publié !</p></div><br><div class='col-xs-12 col-md-8 col-md-offset-3'><a class='accueil' href='index.php'>Retourner à l'accueil</a></div>");
+						                        $("#formulaire").html("<p id='publication'>L'article a bien été publié !</p><br><a class='accueil' href='index.php' id='accueil'>Retourner à l'accueil</a>");
 											
 						                    },
 						                });
